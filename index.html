@@ -29,7 +29,7 @@
     <main>
         <h1>Збери піццу своєї мрії</h1>
         <sub>перетягни всi необхiднi iнгредiєнти</sub>
-        <div id="banner">Отримай знижку 30%!<br><button>Отримати</button></div>
+        <div id="banner" class="banner">Отримай знижку 30%!<br><button>Отримати</button></div>
         <h3>Розмiр:</h3>
         <form id='pizza' action="">
             <label class="radio"><input type="radio" class="radioIn" id="small" name="size" value="small"><span class="fakeRadio"></span><span>Маленька</span></label>
@@ -76,7 +76,8 @@
         <div class="result">
             <div class="price"><p>Цiна: <span id="price"></span> </p></div>
             <div class="sauces"><div>Соуси: <div id="sauce"></div></div></div>
-            <div class="topings"><div>Топiнги: <div id="topping"></div> </div></div>
+            <div class="topings"><div>Топiнги: <div id="topping"></div> </div></div>       
+                <button class="btn-reset hide" type="reset">x</button>
         </div>
     </main>
     <footer>

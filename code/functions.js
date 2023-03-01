@@ -1,5 +1,7 @@
 import { pizzaSelectUser } from "./index.js";
 import pizza from "./pizza.js";
+// import {handlerDrop} from "./functionsDrag.js";
+
  
 function userSlectTopping(topping) {
     //size = "big"
@@ -19,8 +21,8 @@ function userSlectTopping(topping) {
 
 function show(pizza) {
     
-    const totalPrice = document.querySelector("#price");
     let price = 0;
+    const totalPrice = document.querySelector("#price");
 
     if (pizza.sauce !== "") {
         price += pizza.sauce.price;
@@ -37,10 +39,12 @@ function show(pizza) {
     if(pizza.size !== ""){
         price += pizza.size.price;
     }
-    totalPrice.textContent = price;
     
+    totalPrice.textContent = price;
+
     console.log(price);
     return price;
+
 }
 
 export { userSlectTopping, show};

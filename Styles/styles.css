@@ -61,7 +61,7 @@ main {
     padding: 0 10%;
 }
 
-#banner {
+.banner {
     position: fixed;
     bottom: 2%;
     right: 1%;
@@ -77,9 +77,14 @@ main {
     animation: padd .5s ease infinite;
 }
 
-/* .banner-start{
+.banner-start{
+    width: 220px;
+    height: 90px;
     position: relative;
-} */
+    animation: padd .5s ease infinite;
+    transition: all .5s;
+   
+} 
 
 @keyframes padd {
     50% { 
@@ -402,17 +407,25 @@ footer > form > div > p {
     display: inline-flex;
     flex-direction: column;
 }
-/* ============================== */
-.hide {
-    display: none;
+#sauce span,
+#topping span {
+  font-size: 1.5rem;
 }
 
-/* ----------------------------- */
+.btn, 
+.btn-reset  {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1rem;
 
-/* 
-.dragItem-active {
-	opacity: .5;
-} */
+}
+
+.hide {
+    opacity: 0;
+}
 
 .clone {
     opacity: 1;

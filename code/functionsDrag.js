@@ -1,9 +1,8 @@
-import pizza from "./pizza.js";
 
 
 const dragItems = document.querySelectorAll(".dragItem");
 const dropZones = document.querySelectorAll(".dropZone");
-// let pizzaSauce = pizza.sauce;
+
 
 dragItems.forEach((dragItem) => {
   dragItem.addEventListener("dragstart", handlerDragStart);
@@ -27,33 +26,48 @@ function handlerDragOver(event) {
   event.preventDefault();
 }
 
-function handlerDrop(event) {
-
+export function handlerDrop(event) {
   const dragFlag = event.dataTransfer.getData("dragItem");
   const dragItem = document.querySelector(`[data-item="${dragFlag}"]`);
 
-
   const totalPrice = document.querySelector("#price");
-  let totalSauce = document.querySelector("#sauce");
+  const totalSauce = document.querySelector("#sauce");
   const totalTopping = document.querySelector("#topping");
 
-  
   const clone = dragItem.cloneNode(true);
   clone.classList.add("clone");
-
+  const btnsSub = document.querySelector(".btn");
+  const btnsClose = document.querySelector(".btn-reset");
 
   if (dragItem.closest(".sauce")) {
-
     const span2 = document.createElement("span");
     totalSauce.appendChild(span2);
     span2.innerText = dragItem.nextElementSibling.innerHTML;
-
   } else if (dragItem.closest(".topping")) {
-    
     const span1 = document.createElement("span");
     totalTopping.appendChild(span1);
     span1.innerText = dragItem.nextElementSibling.innerHTML;
   }
- 
+
+  btnsClose.classList.remove("hide");
   this.append(clone);
+
+  // =======================================================
+
+  function clear() {
+    btnsClose.addEventListener("click", () => {
+      location.reload();
+    });
+  }
+  clear();
 }
+// ========================================================
+let banner = document.querySelector("#banner");
+
+banner.addEventListener("mouseover", (e) => {
+  
+  banner.classList.add("banner-start");
+  banner.style.left = (e.clientX - 500) + "px";
+  banner.style.top = (e.clientY + 100) + "px";
+});
+
